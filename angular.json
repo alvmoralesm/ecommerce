@@ -1,8 +1,10 @@
 {
-  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
-  "version": 2,
-  "projects": {
-    "eshop-app": "apps/eshop-app",
-    "eshop-app-e2e": "apps/eshop-app-e2e"
-  }
+    "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+    "version": 2,
+    "projects": {
+        "admin": "apps/admin",
+        "admin-e2e": "apps/admin-e2e",
+        "eshop-app": "apps/eshop-app",
+        "eshop-app-e2e": "apps/eshop-app-e2e"
+    }
 }
