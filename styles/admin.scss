@@ -1,15 +1,20 @@
 //Base
+@import '~normalize.css/normalize.css';
 @import './base/fonts.scss';
 @import './base/colors.scss';
 @import './base/mixins.scss';
 
 //Libraries
 @import '~primeicons/primeicons.css';
-@import '~primeng/resources/themes/arya-green/theme.css';
+@import '~primeng/resources/themes/saga-green/theme.css';
 @import '~primeng/resources/primeng.min.css';
 @import './base/config.scss';
 @import '~primeflex/primeflex.css';
 
+//Shared
+@import './apps/admin/shell.scss';
+
 
 //Libs
 @import './libs/ui/ui.scss';
+
