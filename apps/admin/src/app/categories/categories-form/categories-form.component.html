@@ -1,0 +1,42 @@
+<div class="admin-page">
+    <p-card header="Add Category" subheader="Category Form">
+        <div class="grid mb-5">
+            <div class="col-12">
+                <p-toolbar>
+                    <div class="p-toolbar-group-left"></div>
+                    <div class="p-toolbar-group-right">
+                        <p-button styleClass="p-button-info mr-2" label="Create" icon="pi pi-plus" (click)="onSubmit()"></p-button
+                        ><p-button styleClass="p-button-secondary" label="Cancel" icon="pi pi-arrow-left"></p-button>
+                    </div>
+                </p-toolbar>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="col-12">
+                <form [formGroup]="form">
+                    <div class="formgrid grid">
+                        <div class="field col">
+                            <label for="name">Name</label>
+                            <input
+                                id="name"
+                                type="text"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                formControlName="name"
+                            />
+                        </div>
+                        <div class="field col">
+                            <label for="icon">Icon</label>
+                            <input
+                                id="icon"
+                                type="text"
+                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                                formControlName="icon"
+                            />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </p-card>
+</div>
