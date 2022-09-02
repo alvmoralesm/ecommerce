@@ -28,7 +28,7 @@ export class CategoriesFormComponent implements OnInit {
     ngOnInit(): void {
         this.form = this.formBuilder.group({
             name: ['', Validators.required],
-            color: ['', Validators.required],
+            color: ['#ffffff', Validators.required],
             icon: ['', Validators.required]
         });
 
@@ -55,17 +55,21 @@ export class CategoriesFormComponent implements OnInit {
         }
     }
 
+    onCancel() {
+        this.location.back();
+    }
+
     private _createCategory(category: Category) {
         this.categoriesService.createCategory(category).subscribe(
-            (res) => {
-                this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Category successfully created' });
+            (category: Category) => {
+                this.messageService.add({ severity: 'success', summary: 'Success', detail: `Category ${category.name} successfully created` });
                 timer(2000)
                     .toPromise()
                     .then(() => {
                         this.location.back();
                     });
             },
-            (err) => {
+            () => {
                 this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Category could not be created' });
             }
         );
@@ -73,7 +77,7 @@ export class CategoriesFormComponent implements OnInit {
 
     private _updateCategory(category: Category) {
         this.categoriesService.updateCategory(category).subscribe(
-            (res) => {
+            () => {
                 this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Category successfully updated' });
                 timer(2000)
                     .toPromise()
@@ -81,7 +85,7 @@ export class CategoriesFormComponent implements OnInit {
                         this.location.back();
                     });
             },
-            (err) => {
+            () => {
                 this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Category could not be updated' });
             }
         );

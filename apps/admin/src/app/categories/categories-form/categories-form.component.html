@@ -8,7 +8,7 @@
                     <div class="p-toolbar-group-left"></div>
                     <div class="p-toolbar-group-right">
                         <p-button styleClass="p-button-info mr-2" [label]="editMode ? 'Update' : 'Create'" icon="pi pi-plus" (click)="onSubmit()"></p-button
-                        ><p-button styleClass="p-button-secondary" label="Cancel" icon="pi pi-arrow-left"></p-button>
+                        ><p-button styleClass="p-button-secondary" label="Cancel" icon="pi pi-arrow-left" (click)="onCancel()"></p-button>
                     </div>
                 </p-toolbar>
             </div>
@@ -39,13 +39,9 @@
                             <small *ngIf="this.categoryForm['icon'].invalid && isSubmitted" class="p-error">Icon is required</small>
                         </div>
                         <div class="field col">
-                            <label for="color">Color</label>
-                            <input
-                                id="color"
-                                type="text"
-                                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                                formControlName="color"
-                            />
+                            <label for="color">Color</label> <br />
+                            <p-colorPicker id="color" formControlName="color"></p-colorPicker>
+
                             <small *ngIf="this.categoryForm['color'].invalid && isSubmitted" class="p-error">Color is required</small>
                         </div>
                     </div>

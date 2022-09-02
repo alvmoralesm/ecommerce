@@ -21,6 +21,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ColorPickerModule } from 'primeng/colorpicker';
 
 const routes: Routes = [
     {
@@ -47,7 +48,7 @@ const routes: Routes = [
     }
 ];
 
-const UX_MODULE = [CardModule, TableModule, ToolbarModule, ButtonModule, InputTextModule, ToastModule, ConfirmDialogModule];
+const UX_MODULE = [CardModule, TableModule, ToolbarModule, ButtonModule, InputTextModule, ToastModule, ConfirmDialogModule, ColorPickerModule];
 
 @NgModule({
     declarations: [AppComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent],
