@@ -9,8 +9,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ShellComponent } from './shared/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { CategoriesListComponent } from './categories/categories-list/categories-list.component';
-import { CategoriesFormComponent } from './categories/categories-form/categories-form.component';
+import { CategoriesListComponent } from './pages/categories/categories-list/categories-list.component';
+import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
 import { CategoriesService } from '@ecommerce-brand/products';
 
 import { CardModule } from 'primeng/card';
@@ -22,6 +22,8 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ColorPickerModule } from 'primeng/colorpicker';
+import { ProductListComponent } from './pages/products/product-list/product-list.component';
+import { ProductFormComponent } from './pages/products/product-form/product-form.component';
 
 const routes: Routes = [
     {
@@ -43,6 +45,18 @@ const routes: Routes = [
             {
                 path: 'categories/form/:id',
                 component: CategoriesFormComponent
+            },
+            {
+                path: 'products',
+                component: ProductListComponent
+            },
+            {
+                path: 'products/form',
+                component: ProductFormComponent
+            },
+            {
+                path: 'products/form/:id',
+                component: ProductFormComponent
             }
         ]
     }
@@ -51,7 +65,16 @@ const routes: Routes = [
 const UX_MODULE = [CardModule, TableModule, ToolbarModule, ButtonModule, InputTextModule, ToastModule, ConfirmDialogModule, ColorPickerModule];
 
 @NgModule({
-    declarations: [AppComponent, DashboardComponent, ShellComponent, SidebarComponent, CategoriesListComponent, CategoriesFormComponent],
+    declarations: [
+        AppComponent,
+        DashboardComponent,
+        ShellComponent,
+        SidebarComponent,
+        CategoriesListComponent,
+        CategoriesFormComponent,
+        ProductListComponent,
+        ProductFormComponent
+    ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
